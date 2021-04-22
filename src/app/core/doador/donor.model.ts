@@ -1,0 +1,25 @@
+export interface Donor {
+  id?: string,
+  nome: string,
+  cpf: string,
+  rg: string,
+  data_nasc: Date,
+  mae: string,
+  pai: string,
+  email: string,
+  cep: string,
+  endereco: string,
+  numero: number,
+  bairro: string,
+  cidade: string,
+  telefone_fixo: string,
+  celular: string,
+  altura: number,
+  peso: number,
+  tipo_sanguineo: string,
+  sexo: string,
+  estado: string,
+  age: number
+  obeso: boolean,
+  imc: number
+}

@@ -1,0 +1,65 @@
+<app-card>
+  <h1 class= "title">Resultados do JSON</h1>
+  <hr>
+  <br>
+  <br>
+  <div>
+    <h4 (click)="show4 = !show4">Percentual de obesos entre os homens e entre as mulheres</h4>
+    <div [hidden]="!show4">
+      <p>Percentual Homens   - {{responseDTO.percentageOfObeseMen}}%</p>
+      <p>Percentual Mulheres - {{responseDTO.percentageOfObeseWomen}}%</p>
+    </div>
+    <hr>
+    <br>
+    <div *ngIf="responseDTO.averageDonorImcByAge">
+      <h4 (click)="show = !show">
+        IMC médio em Cada faixa de Idade de Idade.
+      </h4>
+      <div *ngFor="let item of responseDTO.averageDonorImcByAge" [hidden]="!show">
+        <hr>
+        <h6>
+          Idade de - {{item.description}}
+        </h6>
+        <p>Total: {{item.total}}</p>
+        <p> Media da Idade: {{item.media}}</p>
+      </div>
+    </div>
+    <hr>
+    <br>
+    <div>
+      <h4 (click)="show1 = !show1"> Qual a média de idade para cada tipo sanguíneo</h4>
+      <div *ngFor="let item of responseDTO.averageDonorAgeByBloodType" [hidden]="!show1">
+        <hr>
+        <h6>
+          Tipo sanguineo - {{item.description}}
+        </h6>
+        <p>Total: {{item.total}}</p>
+        <p> Media da Idade: {{item.media}}</p>
+      </div>
+    </div>
+    <hr>
+    <br>
+    <div>
+      <h4 (click)="show2 = !show2">Candidatos por estado do Brasil</h4>
+      <div *ngFor="let item of responseDTO.donorsByState " [hidden]="!show2">
+        <hr>
+        <h6>
+          Estado - {{item.description}}
+        </h6>
+        <p>Total doadores: {{item.total}}</p>
+      </div>
+    </div>
+    <hr>
+    <br>
+    <div>
+      <h4 (click)="show3 = !show3">Possíveis doadores para cada tipo sanguíneo receptor</h4>
+      <div *ngFor="let item of responseDTO.donorsByState " [hidden]="!show3">
+        <hr>
+        <h6>
+          Tipo sanguíneo- {{item.description}}
+        </h6>
+        <p>Total doadores: {{item.total}}</p>
+      </div>
+    </div>
+  </div>
+</app-card>

@@ -1,0 +1,19 @@
+<app-card [titulo]="'Dados do Doador'">
+  <form [formGroup]="formulario">
+    <div class="form-group">
+      <div class="row">
+
+        <div class="col-md-12">
+          <label>Dados: </label>
+          <textarea type="text" class="form-control" rows="30" formControlName="dadosJson"></textarea>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-4">
+        <button class="btn btn-danger" (click)="submit()"> Enviar</button>
+      </div>
+
+    </div>
+  </form>
+</app-card>
