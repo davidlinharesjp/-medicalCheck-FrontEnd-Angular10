@@ -32,7 +32,6 @@ export class IncluirJsonComponent implements OnInit {
 
   submit() {
     if (this.formulario.valid) {
-      console.log(this.formulario.value.dadosJson)
       this.doadorService.insertJson(this.formulario.value.dadosJson).subscribe((retorno: ResponseDTO) => {
         SweetAlert.exibirSucesso('Doador incluído com sucesso!')
 

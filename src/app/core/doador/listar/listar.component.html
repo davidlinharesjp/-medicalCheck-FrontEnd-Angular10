@@ -6,12 +6,12 @@
   <div>
     <h4 (click)="show4 = !show4">Percentual de obesos entre os homens e entre as mulheres</h4>
     <div [hidden]="!show4">
-      <p>Percentual Homens   - {{responseDTO.percentageOfObeseMen}}%</p>
-      <p>Percentual Mulheres - {{responseDTO.percentageOfObeseWomen}}%</p>
+      <p *ngIf="responseDTO && responseDTO.percentageOfObeseMen">Percentual Homens   - {{responseDTO.percentageOfObeseMen}}%</p>
+      <p *ngIf="responseDTO && responseDTO.percentageOfObeseWomen">Percentual Mulheres - {{responseDTO.percentageOfObeseWomen}}%</p>
     </div>
     <hr>
     <br>
-    <div *ngIf="responseDTO.averageDonorImcByAge">
+    <div *ngIf="responseDTO && responseDTO.averageDonorImcByAge">
       <h4 (click)="show = !show">
         IMC médio em Cada faixa de Idade de Idade.
       </h4>
@@ -26,7 +26,7 @@
     </div>
     <hr>
     <br>
-    <div>
+    <div *ngIf="responseDTO && responseDTO.averageDonorAgeByBloodType">
       <h4 (click)="show1 = !show1"> Qual a média de idade para cada tipo sanguíneo</h4>
       <div *ngFor="let item of responseDTO.averageDonorAgeByBloodType" [hidden]="!show1">
         <hr>
@@ -39,7 +39,7 @@
     </div>
     <hr>
     <br>
-    <div>
+    <div *ngIf="responseDTO && responseDTO.donorsByState">
       <h4 (click)="show2 = !show2">Candidatos por estado do Brasil</h4>
       <div *ngFor="let item of responseDTO.donorsByState " [hidden]="!show2">
         <hr>
@@ -51,9 +51,9 @@
     </div>
     <hr>
     <br>
-    <div>
+    <div *ngIf="responseDTO && responseDTO.possibleDonorsByBloodType">
       <h4 (click)="show3 = !show3">Possíveis doadores para cada tipo sanguíneo receptor</h4>
-      <div *ngFor="let item of responseDTO.donorsByState " [hidden]="!show3">
+      <div *ngFor="let item of responseDTO.possibleDonorsByBloodType " [hidden]="!show3">
         <hr>
         <h6>
           Tipo sanguíneo- {{item.description}}
