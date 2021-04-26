@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { IncluirJsonComponent } from './core/doador/incluir/incluir-json/incluir-json.component';
+import { IncluirJsonComponent } from './core/doador/incluir/incluir-string-json/incluir-json.component';
+import { IncluirArquivoJsonComponent } from './core/doador/incluir/incluir-arquivo-json/incluir-arquivo-json.component';
 import { IncluirComponent } from './core/doador/incluir/incluir.component';
 import { ListarComponent } from './core/doador/listar/listar.component';
 import { PaginaInicialComponent } from './layouts/pages/pagina-inicial/pagina-inicial.component';
@@ -21,8 +22,12 @@ const routes: Routes = [
     component: IncluirComponent,
   },
   {
-    path: 'doador/incluir-json',
+    path: 'doador/incluir-string-json',
     component: IncluirJsonComponent,
+  },
+  {
+    path: 'doador/incluir-arquivo-json',
+    component: IncluirArquivoJsonComponent,
   },
   {
     path: 'doador/listar',

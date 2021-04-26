@@ -1,0 +1,13 @@
+<app-card>
+  <form [formGroup]="formulario">
+    <div class="form-group">
+      <h1>Arquivo .JSON</h1>
+      <div class="row">
+        <input required type="file" id="file" (change)="handleFileInput($event.target.files)">
+      </div>
+      <div class="text-center mt-4">
+        <button class="btn btn-danger" (click)="submit()"> Enviar</button>
+      </div>
+    </div>
+  </form>
+</app-card>

@@ -9,11 +9,11 @@ export class HttpErrorInterceptor implements HttpInterceptor {
     return next.handle(req).pipe(catchError((httpErrorResponse) => {
       var erro = httpErrorResponse.error;
       SweetAlert.exibirErro(erro.message)
-/*       if(erro.erros != null && erro.erros.length > 0 ){
-        erro.erros.forEach(erro => {
-          SweetAlert.exibirErro(erro)
+      if(erro.errors != null && erro.errors.length > 0 ){
+        erro.errors.forEach(erro => {
+          SweetAlert.exibirErro(erro.defaultMessage)
         });
-      } */
+      }
       return throwError(httpErrorResponse.error)
     }))
   }

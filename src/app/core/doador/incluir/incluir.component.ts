@@ -27,7 +27,7 @@ export class IncluirComponent implements OnInit {
   configurarFormulario() {
     this.formulario = this.formBuilder.group({
       nome: [null, Validators.required],
-      cpf: [null],
+      cpf: [null, Validators.required],
       rg: [null],
       data_nasc: [null, Validators.required],
       sexo: [null, Validators.required],

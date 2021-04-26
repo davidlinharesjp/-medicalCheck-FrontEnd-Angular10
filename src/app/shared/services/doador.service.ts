@@ -18,7 +18,13 @@ export class DoadorService {
   }
 
   getDonor() {
-    return this.httpClient.get(`${environment.urlBackEnd}`)
+    return this.httpClient.get(`${environment.urlBackEnd}`);
+  }
+
+  insertFileJson(fileToUpload: File){
+    const formData: FormData = new FormData();
+    formData.append('file', fileToUpload, fileToUpload.name);
+    return this.httpClient.post(`${environment.urlBackEnd}/jsonFile`, formData);
   }
 
 }

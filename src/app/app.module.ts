@@ -14,7 +14,8 @@ import { TableModule } from 'primeng/table';
 import { PaginaNaoEncontradaComponent } from './layouts/pages/pagina-nao-encontrada/pagina-nao-encontrada.component';
 import { PaginaInicialComponent } from './layouts/pages/pagina-inicial/pagina-inicial.component';
 import { HttpErrorInterceptor } from './shared/http-error.interceptor';
-import { IncluirJsonComponent } from './core/doador/incluir/incluir-json/incluir-json.component';
+import { IncluirJsonComponent } from './core/doador/incluir/incluir-string-json/incluir-json.component';
+import { IncluirArquivoJsonComponent } from './core/doador/incluir/incluir-arquivo-json/incluir-arquivo-json.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { IncluirJsonComponent } from './core/doador/incluir/incluir-json/incluir
     CardComponent,
     PaginaNaoEncontradaComponent,
     PaginaInicialComponent,
-    IncluirJsonComponent
+    IncluirJsonComponent,
+    IncluirArquivoJsonComponent
   ],
   imports: [
     BrowserModule,

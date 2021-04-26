@@ -36,3 +36,5 @@ select.form-control.ng-invalid.ng-touched {
 select.form-control.ng-valid.ng-touched {
   border-left: 0.2em solid #42a5f5
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
